@@ -28,6 +28,7 @@ export const loginUser = (
         const userData = data.role_type;
 
         const token = data.token;
+        // localStorage.setItem("token", token);
 
         sessionService
           .saveSession(token)
@@ -69,6 +70,7 @@ export const loginUser = (
 
 
 export const logoutUser = (history) => {
+
     return () => {
         sessionService.deleteSession();
         sessionService.deleteUser();

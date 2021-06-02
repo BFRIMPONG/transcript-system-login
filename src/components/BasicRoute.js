@@ -8,7 +8,7 @@ const BasicRoute = ({ children, authenticated, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        authenticated ? (
+        authenticated  ? (
           children
         ) : (
           <Redirect
