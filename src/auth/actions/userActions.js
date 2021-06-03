@@ -36,7 +36,7 @@ export const loginUser = (
             sessionService
               .saveUser(userData)
               .then(() => {
-                if (userData === "admin") {
+                if (data.role_type === "admin") {
                   history.push("/admin");
                 } else if (userData === "user")
                 history.push("/trainee");

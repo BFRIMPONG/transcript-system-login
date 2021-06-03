@@ -12,22 +12,23 @@ import AuthRoute from "./components/AuthRoute";
 import BasicRoute from "./components/BasicRoute";
 
 function App({ checked }) {
+  
   return (
     <Router>
       {checked && (
-
           <Switch>
             <Route exact path="/">
               <Login />
             </Route>
-            <AuthRoute path="/admin">
+            {/* <BasicRoute path="/admin" component={()=> "Access denied"}/> */}
+            <AuthRoute exact path="/admin">
               <Admin />
             </AuthRoute>
             <BasicRoute path="/trainee">
               <Trainee />
-            </BasicRoute>           
+            </BasicRoute>   
+            <Route path="*" component={()=> "404 Not Found"}/>  1                  
           </Switch>
-
       )}
     </Router>
   );

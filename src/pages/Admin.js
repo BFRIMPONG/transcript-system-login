@@ -4,13 +4,14 @@ import {Button} from "@material-ui/core";
 
 // auth & redux
 import { connect } from "react-redux";
-import { logoutUser } from "../auth/actions/userActions";
+import { logoutUser} from "../auth/actions/userActions";
 
 // React router
 import { useHistory } from "react-router-dom";
 
-const Dashboard = ({ logoutUser, user }) => {
+const Dashboard = ({ logoutUser}) => {
   const history = useHistory();
+
   return (
     <div>
           Admin Dashboard
@@ -18,7 +19,6 @@ const Dashboard = ({ logoutUser, user }) => {
           <Button to="#" onClick={() => logoutUser(history)}>
             Logout
           </Button>
-
 
     </div>
   );
